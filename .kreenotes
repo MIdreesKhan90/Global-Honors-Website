@@ -1,0 +1,8 @@
+
+composer install
+npm install
+
+sudo npm install -g gulp
+
+php -S localhost:4200
+gulp

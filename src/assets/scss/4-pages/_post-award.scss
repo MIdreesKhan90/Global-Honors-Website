@@ -1,0 +1,26 @@
+.awards-form {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.award-post-section {
+
+    .form-style {
+        h6 {
+            font-family: $font-primary;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .check-list {
+            margin-bottom: 20px;
+
+            span {
+                color: #111928;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1em;
+            }
+        }
+    }
+}

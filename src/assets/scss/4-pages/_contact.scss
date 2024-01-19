@@ -1,0 +1,20 @@
+.contact-form {
+    max-width: 640px;
+    margin: 0 auto;
+
+    .policy-check {
+        label {
+            color: #6B7280;
+            font-size: 12px;
+            line-height: 1.5em;
+        }
+
+        a {
+            color: #2C5558;
+            text-decoration: underline;
+        }
+    }
+    .submit-button {
+        margin-top: 24px;
+    }
+}

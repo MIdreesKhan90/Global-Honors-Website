@@ -1,0 +1,34 @@
+.error-section {
+    min-height: calc(100vh - 180px);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        font-family: $font-primary;
+        color: #3F7477;
+        font-size: 128px;
+        font-weight: 800;
+        line-height: 1em;
+    }
+
+    .content {
+        .content-title {
+            font-family: $font-primary;
+            color: #111928;
+            font-size: 36px;
+            font-weight: 800;
+            line-height: 1.5em;
+        }
+
+        .content-desc {
+            color: #6B7280;
+            font-size: 18px;
+            margin: 16px 0 20px;
+        }
+    }
+}
+
+
+

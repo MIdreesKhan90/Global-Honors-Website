@@ -1,0 +1,48 @@
+.privacy-section {
+    .title {
+        text-align: center;
+        font-family: $font-secondary;
+        font-size: 60px;
+        line-height: 1.5em;
+        margin-bottom: 64px;
+        font-weight: 400;
+
+        @include grid-sm-down {
+            margin-bottom: 30px;
+            font-size: 42px;
+        }
+    }
+
+    p {
+        color: #6B7280;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 1.5em;
+    }
+
+    h2 {
+        font-family: $font-primary;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5em;
+        letter-spacing: -0.24px;
+        padding: 32px 0 24px;
+
+        @include grid-sm-down {
+            padding-bottom: 12px;
+        }
+    }
+
+    ol {
+        list-style-position: inside;
+
+        li {
+            color: #6B7280;
+            font-family: $font-primary;
+            font-size: 16px;
+            line-height: 1.5em;
+            margin-top: 16px;
+            list-style-type: decimal;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+    {$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+
+    <section class="section error-section">
+        <div class="container">
+            <h1 class="title">404</h1>
+            <div class="content">
+                <h2 class="content-title">Sorry!</h2>
+                <p class="content-desc">We can’t find that page. But we can help you find an award. Try going back or return to the home page.</p>
+                <a href="/" class="btn btn-green">Back to home</a>
+            </div>
+        </div>
+    </section>
+
+{/block}

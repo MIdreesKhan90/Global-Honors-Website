@@ -1,0 +1,39 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+{$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+
+    <section class="resources-hero-section bg-green section">
+        <div class="container">
+            <h1 class="title">Customer Resources</h1>
+            <p>Explore our available resources for support, growth, strategy and training.</p>
+        </div>
+    </section>
+    <section class="resources-section section">
+        <div class="container">
+            <div class="description">
+                <h2 class="section-title">Get started</h2>
+                <p>Get started using our database by exploring our quick guides and tutorials.</p>
+            </div>
+            {foreach $resources['data'] as $key => $category}
+                <div class="resources-content">
+                    <h6>{$key}</h6>
+                    <div class="start-content">
+                        {foreach $category as $item}
+                            <a href="/resource/{$item['slug']}" class="start-link">
+                                <p>{$item['title']}</p>
+                                <img src="/src/assets/images/icons/arrow-right.svg" alt="">
+                            </a>
+                        {/foreach}
+                    </div>
+                </div>
+            {/foreach}
+        </div>
+    </section>
+
+{/block}

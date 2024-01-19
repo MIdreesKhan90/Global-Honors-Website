@@ -1,0 +1,106 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+    {$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+
+    <section class="section pricing-plan-section">
+        <div class="container">
+            <h1 class="page-title title" style="padding-bottom: 24px;">{$pricing['page_title']}</h1>
+            {if}
+            <p class="page-desc">{$pricing['page_desc']}</p>
+            {/if isset($pricing['page_desc'])}
+            <div class="plan-cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h6>{$pricing['first_plan_name']}</h6>
+                        <h1>{$pricing['first_plan_title']}</h1>
+                        <p>{$pricing['first_plan_desc']}</p>
+                        <ul>
+                            {foreach $pricing['first_plan_list_items'] as $item}
+                                <li>
+                                    {$item['label']}
+                                    <div class="card-info" n:if="$item['tooltip']">
+                                        <img src="/src/assets/images/svg/info.svg" class="info" alt="">
+                                        <div class="tooltip">
+                                            <p>{$item['tooltip']}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                    <style>
+                        .isDisabled {
+                          color: #ccc;
+                            pointer-events: none;
+                          background-color: #E5E7EB;
+                          cursor: not-allowed;
+                          text-decoration: none;
+                          display: block;
+                        }
+                    </style>
+                    <div class="subscribe-btn">
+                        {* <a href="{$pricing['first_plan_button_link']}" class="btn btn-green">{$pricing['first_plan_button_title']}</a> *}
+                        <a href="/checkout" class="btn isDisabled" disabled>{$pricing['first_plan_button_title']}</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div n:if="$pricing['is_premier_promo'] === 1">
+                        <img class="badge" src="/src/assets/images/svg/badge-yellow.svg" alt="badge">
+                        <p class="icon-title">{$pricing['premier_promo_badge']}</p>
+                    </div>
+                    <div class="card-content">
+                        <h6>{$pricing['second_plan_name']}</h6>
+                        <h1 class="{if $pricing['is_premier_promo'] === 1}line-through{/if}">
+                            {$pricing['second_plan_title']}
+                        </h1>
+                        <div n:if="$pricing['is_premier_promo'] === 1"
+                                class="discount-plan">
+                            <p class="ribbon-text">{$pricing['premier_promo_label']}</p>
+                        </div>
+                        <p>{$pricing['second_plan_desc']}</p>
+                        <ul>
+                            {foreach $pricing['second_plan_list_items'] as $item}
+                                <li>
+                                    {$item['label']}
+                                    <div class="card-info" n:if="$item['tooltip']">
+                                        <img src="/src/assets/images/svg/info.svg" class="info" alt="">
+                                        <div class="tooltip">
+                                            <p>{$item['tooltip']}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {/foreach}
+                        </ul>
+                    </div>
+                    <div class="subscribe-btn">
+                        <a href="/checkout" class="btn btn-green">{$pricing['second_plan_button_title']}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section section bg-gray-50" n:if="$faqs">
+        <div class="container">
+            <h2>Frequently asked questions</h2>
+            {foreach $faqs as $item}
+                <div class="accordion-tab">
+                    <div class="accordion-button">
+                        <h4>{$item['question']}</h4>
+                    </div>
+                    <div class="accordion-content">
+                        {$item['answer']|noescape}
+                    </div>
+                </div>
+                <p></p>
+            {/foreach}
+        </div>
+    </section>
+
+{/block}

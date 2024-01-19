@@ -1,0 +1,190 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+
+.navbar {
+    display: flex;
+    align-items: center;
+
+    @include grid-sm-down {
+        flex-flow: column;
+    }
+
+    .nav-items {
+        border-bottom: 4px solid transparent;
+
+        &:hover {
+            border-bottom: 4px solid #2C5558;
+        }
+
+        &.active {
+            border-bottom: 4px solid #2C5558;
+        }
+
+        .nav-link {
+            display: block;
+            color: #111928;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5em;
+            padding: 30px 0;
+
+            @include grid-sm-down {
+                font-size: 18px;
+            }
+        }
+
+        & + .nav-items {
+            margin-left: 32px;
+
+            @include grid-sm-down {
+                margin: 10px 0 0;
+            }
+        }
+    }
+}
+
+.header-section {
+    background-color: #fff;
+    position: relative;
+    min-height: 88px;
+    z-index: 99;
+    @include grid-sm-down {
+        padding: 15px 0;
+        min-height: 76px;
+    }
+
+    nav{
+        &.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(9px);
+            box-shadow: 0 30px 60px -45px #000000, -1px 0 0 rgba(0, 0, 0, 0.1);
+            -webkit-overflow-scrolling: touch;
+            animation: fadeInSlideDown 0.5s ease forwards;
+
+            @include grid-sm-down{
+                padding: 10px 0;
+            }
+        }
+
+        &.animate-up {
+            animation: fadeInSlideUp 0.3s ease;
+        }
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .logo {
+            display: inline-block;
+
+            img {
+                height: 40px;
+                width: auto;
+                vertical-align: middle;
+            }
+        }
+
+        .btn-nav-toggle {
+            background-color: transparent;
+            min-width: fit-content;
+            padding: 7px 0 7px 7px;
+            border-radius: 5px;
+            margin-left: auto;
+            height: auto;
+
+            img {
+                width: 25px;
+            }
+
+            @media (min-width: 751px) {
+                display: none;
+            }
+        }
+
+        .collapse {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 48px;
+            flex: 1 0 auto;
+            align-items: center;
+
+            @include grid-sm-down {
+                position: absolute;
+                top: 87px;
+                left: 0;
+                background-color: #FFF;
+                width: 100%;
+                padding: 30px;
+                margin: 0;
+                display: none;
+                text-align: center;
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        .right {
+            margin-left: auto;
+
+            a {
+                font-size: 16px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+                border-bottom: 4px solid transparent;
+                border-radius: 0;
+
+                &:hover {
+                    border-bottom: 4px solid #2C5558;
+                }
+
+                &.active {
+                    border-bottom: 4px solid #2C5558;
+                }
+            }
+
+            @include grid-sm-down {
+                .btn-green {
+                    display: block;
+                }
+            }
+        }
+    }
+}

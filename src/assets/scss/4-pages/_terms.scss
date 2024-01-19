@@ -1,0 +1,86 @@
+.services-section {
+
+    .title {
+        text-align: center;
+        font-family: $font-secondary;
+        font-size: 60px;
+        line-height: 1.5em;
+        font-weight: 400;
+        @include grid-sm-down{
+            font-size: 42px;
+        }
+    }
+
+    .home-title {
+        font-family: $font-secondary;
+        font-size: 36px;
+        line-height: 48px;
+        font-weight: 400;
+        max-width: 320px;
+        margin-bottom: 24px;
+        @include grid-sm-down{
+            font-size: 32px;
+        }
+    }
+
+    h4 {
+        color: #6B7280;
+        text-align: center;
+        font-family: $font-primary;
+        font-size: 20px;
+        line-height: 1.5em;
+        font-weight: 400;
+        margin-bottom: 64px;
+
+        @include grid-sm-down {
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+    }
+
+    p {
+        color: #6B7280;
+        font-family: $font-primary;
+        font-size: 16px;
+        line-height: 1.5em;
+        margin-bottom: 16px;
+    }
+
+    h2 {
+        font-family: $font-primary;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.5em;
+        letter-spacing: -0.24px;
+        padding: 16px 0 24px;
+        @include grid-sm-down{
+            padding-bottom: 12px;
+        }
+    }
+
+    ul,
+    ol {
+        li {
+            color: #6B7280;
+            font-family: $font-primary;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.5em;
+            & + li{
+                margin-top: 10px;
+            }
+        }
+    }
+    ol{
+        margin: 0 0 24px 20px;
+        li{
+            list-style-type: lower-alpha;
+        }
+    }
+    ul{
+        margin-left: 20px;
+        li{
+            list-style-type: disc;
+        }
+    }
+}

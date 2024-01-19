@@ -1,0 +1,133 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+    {$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+
+    <section class="section contact-us-section">
+        <div class="container">
+            <h1 class="page-title title">We’re Here for You</h1>
+            <p class="page-desc">Have a question? Send us a message and we'll be in touch soon.</p>
+            <div class="contact-form">
+                <form id="contactForm" action="" method="POST" class="form-style">
+                    <div class="row">
+                        <div class="form-input">
+                            <label for="firstName">First name*</label>
+                            <input type="text"
+                                   id="firstName"
+                                   name="firstName"
+                                   class="input"
+                                   placeholder="Your name"
+                                   required
+                            >
+                        </div>
+                        <div class="form-input">
+                            <label for="lastName">Last name*</label>
+                            <input type="text"
+                                   id="lastName"
+                                   name="lastName"
+                                   class="input"
+                                   placeholder="Your name"
+                                   required
+                            >
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email*</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               class="input"
+                               placeholder="name@example.com"
+                               required
+                        >
+                    </div>
+                    <div class="form-input">
+                        <label for="phone">Phone number</label>
+                        <input type="text"
+                               id="phone"
+                               name="phone"
+                               class="input"
+                               placeholder="XXX-XXX-XXXX"
+                        >
+                    </div>
+                    <div class="form-input">
+                        <label for="message">Your message*</label>
+                        <textarea id="message"
+                                  name="message"
+                                  class="input"
+                                  placeholder="Write your message here"
+                                  rows="6"
+                                  required
+                        ></textarea>
+                    </div>
+                    <div class="policy-check">
+                        <label class="styled-checkbox">
+                            <input type="checkbox" name="agree" value="agree" class="checkbox">
+                            <span class="checkmark"></span>
+                            <span>
+                                By submitting this form, you confirm that you have read and agree to Global Honor’s
+                            <a href="/terms-of-service" target="_blank">Terms of Service</a>
+                            and <a href="/privacy-policy" target="_blank">Privacy Policy</a>.
+                            </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-green submit-button" name="submit" value="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{/block}
+
+
+{block script}
+    <script src="dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $("#contactForm").validate({
+            messages: {
+                firstName: {
+                    required: "Please enter your first name"
+                },
+                lastName: {
+                    required: "Please enter your last name"
+                },
+                email: {
+                    required: "Please enter your email",
+                    email: "This doesn't look like a valid email address."
+                },
+                message: {
+                    required: "Please enter your message"
+                }
+            },
+            submitHandler: function (form) {
+                $('.submit-button').prop('disabled', true);
+                $.ajax({
+                    url: 'includes/contact-form.php',
+                    type: 'POST',
+                    data: $(form).serialize(),
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.type == 'success') {
+                             window.location = '/confirmation'
+                            $(form)[0].reset();
+                        } else {
+                            window.location = '/500'
+                        }
+                        $('.submit-button').prop('disabled', false);
+                    },
+                    error: function (xhr, status, error) {
+                        window.location = '/500'
+                        $('.submit-button').prop('disabled', false);
+                    }
+                });
+                return false;
+            }
+        });
+    </script>
+{/block}

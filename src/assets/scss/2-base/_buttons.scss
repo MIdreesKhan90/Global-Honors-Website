@@ -1,0 +1,99 @@
+.btn {
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: $font-w-600;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+}
+
+.bg-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn-lg {
+    font-size: 16px;
+    font-weight: $font-w-500;
+    padding: 12px 20px;
+}
+
+.btn-sm {
+    font-size: 14px;
+    padding: 8px 12px;
+}
+
+.btn-transparent {
+    background: transparent;
+    border-color: $light-green;
+    color: $text-color;
+
+    &:hover {
+        background: $grey-dark;
+        border-color: $grey-dark;
+        color: $color-white;
+    }
+
+}
+
+.btn-white {
+    background-color: $color-white;
+    border-color: $color-white;
+    color: $text-color;
+}
+
+.btn-green {
+    background-color: #2C5558;
+    color: $color-white;
+    border: 3px solid transparent;
+
+    &:hover {
+        background-color: #234648;
+        color: $color-white;
+    }
+
+    &:focus {
+        border: 3px solid #95C3C6;
+    }
+}
+
+.btn-light-green {
+  background-color: rgb(149 195 198);
+  color: $color-white;
+  border: 3px solid transparent;
+}
+
+.btn-yellow {
+    background-color: #C3B041;
+    color: $color-black;
+    border: 3px solid transparent;
+
+    &:hover {
+        background-color: #9B8B31;
+        color: $color-black;
+    }
+    &:focus{
+        border: 3px solid #E2D8A2;
+        background: #C3B041;
+    }
+}
+
+.btn-process {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}

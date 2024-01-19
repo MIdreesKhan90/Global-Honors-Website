@@ -1,0 +1,193 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+    {$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+
+    <section class="award-post-section section">
+        <div class="container-sm">
+            <h1 class="page-title">Award Sponsor Opportunities</h1>
+            <p class="page-desc">To inquire about advertising on our site or to submit an award for inclusion in our database, please
+                complete the form below.</p>
+
+            <div class="awards-form">
+                <form id="awardForm" action="" method="post" class="form-style">
+                    <h6>Select all that apply:</h6>
+                    <label class="check-list styled-checkbox">
+                        <input class="js-slide-check-options" data-target="#awardInputs" type="checkbox" name="agreeToDatabase" id="agreeToDatabase">
+                        <span class="checkmark"></span>
+                        <span>I have an award that I would like included in the database.</span>
+                    </label>
+                    <div id="awardInputs" style="display: none">
+                        <div class="form-input">
+                            <label for="awardName">Award name*</label>
+                            <input type="text"
+                                   name="awardName"
+                                   id="awardName"
+                                   placeholder="The Example Awards"
+                                   class="input"
+                                   required>
+                        </div>
+                        <div class="form-input">
+                            <label for="awardUrl">Award URL*</label>
+                            <input type="url"
+                                   name="awardUrl"
+                                   id="awardUrl"
+                                   placeholder="https://www.example.com/"
+                                   class="input"
+                                   required>
+                        </div>
+                    </div>
+
+
+                    <label class="check-list styled-checkbox">
+                        <input type="checkbox" name="awardSponsor" id="awardSponsor">
+                        <span class="checkmark"></span>
+                        <span>I am an awards sponsor.</span>
+                    </label>
+                    <label class="check-list styled-checkbox">
+                        <input type="checkbox" name="agreeAdvertising" id="agreeAdvertising">
+                        <span class="checkmark"></span>
+                        <span>I am interested in advertising and sponsorship opportunities.</span>
+                    </label>
+                    <label class="check-list styled-checkbox">
+                        <input class="js-slide-check-options" data-target="#otherInput" type="checkbox" name="agreeOtherInterest" id="agreeOtherInterest">
+                        <span class="checkmark"></span>
+                        <span>Other:</span>
+                    </label>
+                    <div class="form-input" id="otherInput" style="display: none">
+                    <textarea name="otherInterest"
+                              id="otherInterest"
+                              cols="30"
+                              rows="4"
+                              placeholder="Please specify other"
+                              class="input"
+                    ></textarea>
+                    </div>
+                    <div class="form-input">
+                        <label for="company">Company</label>
+                        <input type="text"
+                               name="company"
+                               id="company"
+                               placeholder="Company name"
+                               class="input"
+                               >
+                    </div>
+                    <div class="row">
+                        <div class="form-input">
+                            <label for="firstName">First name*</label>
+                            <input type="text"
+                                   name="firstName"
+                                   id="firstName"
+                                   placeholder="Your name"
+                                   class="input"
+                                   required>
+                        </div>
+                        <div class="form-input">
+                            <label for="lastName">Last name*</label>
+                            <input type="text"
+                                   name="lastName"
+                                   id="lastName"
+                                   placeholder="Your name"
+                                   class="input"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-input">
+                        <label for="email">Email*</label>
+                        <input type="email"
+                               name="email"
+                               id="email"
+                               placeholder="name@example.com"
+                               class="input"
+                               required>
+                    </div>
+                    <div class="form-input">
+                        <label for="phone">Phone number</label>
+                        <input type="tel"
+                               name="phone"
+                               id="phone"
+                               placeholder="XXX-XXX-XXXX"
+                               class="input"
+                               >
+                    </div>
+                    <button type="submit" class="btn btn-green submit-button" name="submit" value="submit">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+{/block}
+{block script}
+    <script src="dist/js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".js-slide-check-options").change(function () {
+                let target = $(this).data('target');
+                if (this.checked) {
+                    $(target).slideDown();
+                } else {
+                    $(target).slideUp();
+                }
+            });
+        });
+
+        $("#awardForm").validate({
+            rules: {
+                awardName: {
+                    required: "#agreeToDatabase:checked"
+                },
+                awardUrl: {
+                    required: "#agreeToDatabase:checked"
+                },
+            },
+            messages: {
+                awardName: {
+                    required: "Please enter award name"
+                },
+                awardUrl: {
+                    required: "Please enter award url"
+                },
+                firstName: {
+                    required: "Please enter your first name"
+                },
+                lastName: {
+                    required: "Please enter your last name"
+                },
+                email: {
+                    required: "Please enter your company email",
+                    email: "This doesn't look like a valid email address."
+                },
+            },
+            submitHandler: function (form) {
+                $('.submit-button').prop('disabled', true);
+                $.ajax({
+                    url: 'includes/post-award.php',
+                    type: 'POST',
+                    data: $(form).serialize(),
+                    dataType: 'json',
+                    success: function (res) {
+                        if (res.type == 'success') {
+                            window.location = '/confirmation'
+                            $(form)[0].reset();
+                        } else {
+                            window.location = '/500'
+                        }
+                        $('.submit-button').prop('disabled', false);
+                    },
+                    error: function (xhr, status, error) {
+                        window.location = '/500'
+                        $('.submit-button').prop('disabled', false);
+                    }
+                });
+                return false;
+            }
+        });
+    </script>
+{/block}

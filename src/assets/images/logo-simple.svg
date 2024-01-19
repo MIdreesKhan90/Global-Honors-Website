@@ -1,0 +1,57 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Layer 2">
+<g id="Layer 1">
+<g id="Clip path group">
+<mask id="mask0_2402_1400" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="-1" y="0" width="66" height="65">
+<g id="clip-path">
+<path id="Vector" d="M32.0032 1.80786e-07C25.6737 -0.000672453 19.4861 1.87562 14.223 5.39161C8.95994 8.90759 4.85768 13.9053 2.43502 19.7528C0.0123674 25.6003 -0.621858 32.0349 0.61255 38.2428C1.84696 44.4508 4.89456 50.1533 9.36994 54.6291C13.8453 59.105 19.5475 62.1532 25.7553 63.3882C31.9631 64.6233 38.3978 63.9898 44.2455 61.5677C50.0932 59.1457 55.0914 55.044 58.608 49.7812C62.1245 44.5185 64.0015 38.3312 64.0015 32.0017C64.0015 23.5149 60.6303 15.3757 54.6296 9.37428C48.6288 3.3729 40.4899 0.000902071 32.0032 1.80786e-07Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask0_2402_1400)">
+<g id="Group">
+<path id="Vector_2" d="M64.0015 0H0.00146484V64H64.0015V0Z" fill="url(#paint0_linear_2402_1400)"/>
+</g>
+</g>
+</g>
+<g id="Group_2" opacity="0.54">
+<g id="Clip path group_2">
+<mask id="mask1_2402_1400" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="14" y="8" width="28" height="46">
+<g id="clip-path-2">
+<path id="Vector_3" d="M41.7735 8.37988H14.2915V53.655H41.7735V8.37988Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask1_2402_1400)">
+<g id="Group_3">
+<path id="Vector_4" d="M17.3521 53.3152L38.7126 32.0465L17.3521 10.7607" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+<g id="Group_4" opacity="0.54">
+<g id="Clip path group_3">
+<mask id="mask2_2402_1400" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="22" y="8" width="28" height="46">
+<g id="clip-path-3">
+<path id="Vector_5" d="M49.7931 8.37988H22.311V53.655H49.7931V8.37988Z" fill="white"/>
+</g>
+</mask>
+<g mask="url(#mask2_2402_1400)">
+<g id="Group_5">
+<path id="Vector_6" d="M46.7321 53.3152L25.3682 32.0465L46.7321 10.7607" fill="white"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_2402_1400" x1="0.0928788" y1="31.9403" x2="64.0929" y2="31.9403" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFD900"/>
+<stop offset="0.01" stop-color="#FFD900"/>
+<stop offset="0.11" stop-color="#F8D708"/>
+<stop offset="0.29" stop-color="#E4D220"/>
+<stop offset="0.5" stop-color="#C4CA45"/>
+<stop offset="0.75" stop-color="#97BE7A"/>
+<stop offset="1" stop-color="#63B1B6"/>
+</linearGradient>
+</defs>
+</svg>

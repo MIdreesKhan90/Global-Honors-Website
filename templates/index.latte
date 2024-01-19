@@ -1,0 +1,136 @@
+{* Use the layout defined in @layout.latte *}
+{layout '@layout.latte'}
+
+{block title}
+    {$page_title}
+{/block}
+
+{* Define the main content block *}
+{block content}
+    {if $enable_splash == 1}
+        <section class="homepage-splash">
+            <img src="/src/assets/images/logo.svg" class="banner-logo" alt="Global Honors">
+        </section>
+    {else}
+        <section class="hero-section bg-green">
+            <div class="container">
+                <h1 class="title">Welcome to Business Awards Nirvana</h1>
+                <div class="desc">
+                    <p>Take the stress out of search with thousands of fully researched and vetted business awards in one convenient location.</p>
+                    <br>
+                    <p>Discover a simpler way to search with our limited-time launch promo.</p>
+                    <a href="/pricing" class="btn btn-yellow btn-lg">Get started</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <img src="src/assets/images/hero-image.png" class="hero-image" alt="Hero Image">
+            </div>
+        </section>
+
+        <section class="awards-database-section section bg-gray-50">
+            <div class="container">
+                <h1 class="section-title">The only awards database of its kind</h1>
+                <div class="awards-content reverse-card">
+                    <div class="left">
+                        <img src="src/assets/images/awards-image-1.jpg" class="awards-image" alt="Hero Image">
+                    </div>
+                    <div class="right">
+                        <h2>A powerful database that does more than help you win awards</h2>
+                        <p>Boost your company’s reputation, grow your business, attract more clients and recruit the best talent.</p>
+                    </div>
+                </div>
+                <div class="awards-content">
+                    <div class="right">
+                        <h2>Rest at ease</h2>
+                        <p>No more mindless google searching and falling down the rabbit hole for awards that might be ok or applicable. Focus on what matters most. Our awards are fully vetted and researched.</p>
+                    </div>
+                    <div class="left">
+                        <img src="src/assets/images/awards-image-2.jpg" class="awards-image" alt="Hero Image">
+                    </div>
+                </div>
+                <div class="awards-content reverse-card">
+                    <div class="left">
+                        <img src="src/assets/images/awards-image-1.jpg" class="awards-image" alt="Hero Image">
+                    </div>
+                    <div class="right">
+                        <h2>An award for everyone</h2>
+                        <p>We’ve carefully curated a diverse database of awards meant for any one in the market to win an award. Large PR companies, small businesses, etc., we deliver the most up-to-date awards database.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section services-section">
+            <div class="container">
+                <h1 class="section-title">The only business awards database of its kind</h1>
+                <div class="description">
+                    <p>Lorem ipsum dolor sit amet consectetur. Leo placerat libero ut pretium amet ipsum sed ut quis. Nulla faucibus urna arcu scelerisque natoque euismod.</p>
+                </div>
+                <div class="services-section">
+                    <div class="services-card">
+                        <div class="services-image">
+                            <img src="src/assets/images/icons/chart-mixed.svg" alt="Convenient">
+                        </div>
+                        <h3>Personalize your search</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur. Fringilla amet etiam turpis amet vitae mus. Molestie pharetra vitae tellus eros in fames nisl interdum sodales.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div class="services-card">
+                        <div class="services-image">
+                            <img src="src/assets/images/icons/briefcase.svg" alt="Convenient">
+                        </div>
+                        <h3>Manage deadlines</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur. Fringilla amet etiam turpis amet vitae mus. Molestie pharetra vitae tellus eros in fames nisl interdum sodales.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                  <div class="services-card">
+                        <div class="services-image">
+                            <img src="src/assets/images/icons/palette.svg" alt="Convenient">
+                        </div>
+                        <h3>Notifications</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur. Fringilla amet etiam turpis amet vitae mus. Molestie pharetra vitae tellus eros in fames nisl interdum sodales.</p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="customers-review-section section bg-light-blue">
+            <div class="container">
+                <h1 class="section-title">Here’s what our customers are saying</h1>
+                <div class="home-testimonial owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="customer-review">
+                            <h5>"Global Honors is awesome. We can now focus more efforts on winning the awards instead of hunting around saving us tons of time."</h5>
+                            <p><span>Chris Roberts   /</span> Senior PR Manager @capwellcommunications</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="customer-review">
+                            <h5>"Global Honors is awesome. We can now focus more efforts on winning the awards instead of hunting around saving us tons of time."</h5>
+                            <p><span>Chris Roberts   /</span> Senior PR Manager @capwellcommunications</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="customer-review">
+                            <h5>"Global Honors is awesome. We can now focus more efforts on winning the awards instead of hunting around saving us tons of time."</h5>
+                            <p><span>Chris Roberts   /</span> Senior PR Manager @capwellcommunications</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience-section section bg-white">
+            <div class="container">
+                <div class="content">
+                    <h1 class="section-title">Experience the zen of simplified search</h1>
+                    <a href="" class="btn btn-green">Get started</a>
+                </div>
+            </div>
+        </section>
+    {/if}
+{/block}

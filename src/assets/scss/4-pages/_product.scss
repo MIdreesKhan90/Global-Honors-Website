@@ -1,0 +1,211 @@
+.product-hero-section {
+    .hero-content {
+        display: flex;
+        gap: 67px;
+
+        @include grid-md-down {
+            flex-flow: column;
+        }
+
+        .left {
+            width: 49%;
+
+            @include grid-md-down {
+                width: 100%;
+            }
+
+            h1 {
+                color: $color-white;
+                font-family: $font-secondary;
+                font-size: 60px;
+                font-weight: 400;
+                line-height: 1.1em;
+                margin-bottom: 24px;
+            }
+
+            p {
+                color: $color-white;
+                font-family: $font-primary;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 1.5em;
+            }
+
+            .btn-lg {
+                margin-top: 40px;
+            }
+        }
+
+        .right {
+            width: 51%;
+
+            @include grid-md-down {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.product-manage-section {
+    .product-manage-content {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+
+        @include grid-md-down {
+            flex-flow: column;
+        }
+
+        &+.product-manage-content {
+            margin-top: 60px;
+        }
+
+        .left {
+            width: 50%;
+
+            @include grid-md-down {
+                width: 100%;
+                order: 2;
+            }
+        }
+
+        .right {
+            width: 50%;
+
+            @include grid-md-down {
+                width: 100%;
+                order: 1;
+            }
+        }
+
+        h2 {
+            color: #111928;
+            font-family: $font-secondary;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2em;
+            letter-spacing: -0.36px;
+            margin-bottom: 24px;
+        }
+
+        p {
+            color: #6B7280;
+            font-family: $font-primary;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5em;
+        }
+    }
+}
+
+.product-awards-section {
+    background: #D7E8EA;
+
+    .content {
+        background-color: #fff;
+        text-align: center;
+        padding: 64px 0;
+
+        h1 {
+            color: #111928;
+            font-family: $font-secondary;
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2em;
+            letter-spacing: -0.36px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: #111928;
+            font-family: $font-primary;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 1.5em;
+            margin-bottom: 32px;
+        }
+    }
+}
+
+.customer-review-section {
+    h1 {
+        color: #111928;
+        text-align: center;
+        font-family: $font-secondary;
+        font-size: 36px;
+        font-weight: 400;
+        line-height: 1.2em;
+        letter-spacing: -0.36px;
+    }
+
+    .owl-carousel {
+        margin-top: 64px;
+
+        .customer-review {
+            text-align: center;
+            max-width: 768px;
+            margin: 0 auto;
+
+            h5 {
+                color: #111928;
+                font-family: $font-primary;
+                font-size: 20px;
+                font-weight: 400;
+                line-height: 1.5em;
+                margin-bottom: 32px;
+            }
+
+            p {
+                color: #6B7280;
+                font-family: $font-primary;
+                font-size: 14px;
+                font-weight: 400;
+                line-height: 1.5em;
+                margin-bottom: 32px;
+
+                span {
+                    color: #111928;
+                    font-weight: 700;
+                    margin-right: 12px;
+                }
+            }
+        }
+
+        .owl-nav {
+            margin: 0;
+
+            .owl-next {
+                width: 20px;
+                height: 20px;
+                background-image: url($images-path + "/svg/arrow-right.svg");
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+
+            .owl-prev {
+                width: 20px;
+                height: 20px;
+                background-image: url($images-path + "/svg/arrow-left.svg");
+                margin-right: 24px;
+
+                &:hover {
+                    background-color: transparent;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+        }
+    }
+}
